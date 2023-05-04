@@ -1,11 +1,16 @@
 import React, { useState } from 'react'
 import './NewExpense.css'
+import supabase from '../supabase'
 
-const NewExpense = props => {
+const NewExpense = ({ getExpenses }) => {
 	const [enteredTitle, setEnteredTitle] = useState('')
 	const [enteredAmount, setEnteredAmount] = useState(0)
 	const [enteredDate, setEnteredDate] = useState('')
 	const [isEditing, setIsEditing] = useState(false)
+
+	let year = enteredDate.split('-')
+	console.log(enteredDate,year)
+	
 
 	const titleHandler = e => {
 		setEnteredTitle(e.target.value)
@@ -23,26 +28,36 @@ const NewExpense = props => {
 	const dateHandler = e => {
 		setEnteredDate(e.target.value)
 	}
-	const submitHandler = e => {
-		e.preventDefault()
 
-		const expenseDate = {
-			id: Math.random().toString(),
-			title: enteredTitle,
-			amount: +enteredAmount,
-			date: new Date(enteredDate),
-		}
-		console.log(expenseDate)
+
+	const submitHandler = async e => {
+		e.preventDefault()
+		await supabase.from('Expenses').insert({
+			Title: enteredTitle,
+			Date: enteredDate,
+			ExpensesAmount: +enteredAmount,
+			filteredYear: year[0].toString()
+		})
+
+		// const expenseDate = {
+
+		// 	id: Math.random().toString(),
+		// 	title: enteredTitle,
+		// 	amount: +enteredAmount,
+		// 	date: new Date(enteredDate),
+		// }
+
 		setEnteredAmount('')
 		setEnteredDate('')
 		setEnteredTitle('')
-		props.onAddExpense(expenseDate)
+		// props.onAddExpense(expenseDate)
 		setIsEditing(false)
+		getExpenses()
 	}
 	const editingHandler = () => {
 		setIsEditing(true)
 	}
-	const stopEditingHandler=()=>{
+	const stopEditingHandler = () => {
 		setIsEditing(false)
 	}
 
@@ -71,7 +86,9 @@ const NewExpense = props => {
 					</div>
 					<div className="new-expene__actions">
 						<button type="submit">Add Expense</button>
-						<button type='button' onClick={stopEditingHandler}>Cancel</button>
+						<button type="button" onClick={stopEditingHandler}>
+							Cancel
+						</button>
 					</div>
 				</form>
 			)}

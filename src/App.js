@@ -1,25 +1,35 @@
-import React,{useState} from 'react'
-import'./App.css'
+import React, { useState, useEffect } from 'react'
+import './App.css'
 import Expenses from './components/Expenses'
 import NewExpense from './components/NewExpense'
+import supabase from './supabase'
 
-
-const INITIAL_EXPENSES = [
-		
-	]
+const INITIAL_EXPENSES = []
 const App = () => {
 	const [expenses, setExpenses] = useState(INITIAL_EXPENSES)
-	
-	
-	const addExpenseHandler=(expense)=>{
-        setExpenses(prevstate=>{ return[expense,...prevstate]})
+	const [expensesStored, setExpensesStored] = useState()
+
+	async function getExpenses() {
+		const { data } = await supabase.from('Expenses').select()
+		setExpensesStored(data)
 	}
 
+	useEffect(() => {
+		getExpenses()
+	}, [])
+
 	
+
+	const addExpenseHandler = expense => {
+		setExpenses(prevstate => {
+			return [expense, ...prevstate]
+		})
+	}
+
 	return (
 		<>
-			<NewExpense  onAddExpense={addExpenseHandler}/>
-			<Expenses expenses={expenses} />
+			<NewExpense onAddExpense={addExpenseHandler} getExpenses={getExpenses} />
+			<Expenses expenses={expenses} expensesStored={expensesStored}/>
 		</>
 	)
 }

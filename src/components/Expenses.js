@@ -4,22 +4,26 @@ import ExpenseItem from './ExpenseItem'
 import ExpensesFilter from './ExpenseFilter'
 import ExpensesChart from './ExpensesChart'
 
-const Expenses = items => {
+const Expenses = ({ expensesStored }) => {
 	const [filteredYear, setFilteredYear] = useState('2023')
+	if (!expensesStored) {
+		return null
+	}
 	const filterChangeHandler = year => {
 		setFilteredYear(year)
-		console.log(year)
+		
 	}
 
-	const filteredExpenses = items.expenses.filter(expense => {
-		return expense.date.getFullYear().toString() === filteredYear
+	const filteredExpenses = expensesStored.filter(expense => {
+		return expense.filteredYear === filteredYear
 	})
+	console.log(filteredYear)
 
-	let noExpenses = <p className='expenses-list__fallback'>No expenses found.</p>
+	let noExpenses = <p className="expenses-list__fallback">No expenses found.</p>
 
 	if (filteredExpenses.length > 0) {
 		noExpenses = filteredExpenses.map((expense, index) => {
-			return <ExpenseItem key={index} title={expense.title} amount={expense.amount} date={expense.date} />
+			return <ExpenseItem key={index} title={expense.Title} amount={expense.ExpensesAmount} date={expense.Date} />
 		})
 	}
 
@@ -27,8 +31,8 @@ const Expenses = items => {
 		<div>
 			<div className="expenses">
 				<ExpensesFilter selectedYear={filteredYear} onChangeFilter={filterChangeHandler} />
-				<ExpensesChart expenses={filteredExpenses}/>
-				{noExpenses }
+				<ExpensesChart expenses={filteredExpenses} />
+				{noExpenses}
 			</div>
 		</div>
 	)
