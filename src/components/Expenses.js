@@ -4,6 +4,7 @@ import ExpenseItem from './ExpenseItem'
 import ExpensesFilter from './ExpenseFilter'
 import ExpensesChart from './ExpensesChart'
 
+
 const Expenses = ({ expensesStored }) => {
 	const [filteredYear, setFilteredYear] = useState('2023')
 	if (!expensesStored) {
@@ -23,9 +24,11 @@ const Expenses = ({ expensesStored }) => {
 
 	if (filteredExpenses.length > 0) {
 		noExpenses = filteredExpenses.map((expense, index) => {
-			return <ExpenseItem key={index} title={expense.Title} amount={expense.ExpensesAmount} date={expense.Date} />
+			return <ExpenseItem key={index} title={expense.Title} category={expense.Kategoria} amount={expense.ExpensesAmount} date={expense.Date} />
 		})
 	}
+
+	
 
 	return (
 		<div>

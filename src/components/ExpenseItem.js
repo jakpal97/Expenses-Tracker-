@@ -2,9 +2,9 @@ import React from 'react'
 import './ExpenseItem.scss'
 import ExpenseDate from './ExpenseDate'
 
-const ExpenseItem = ({title , date , amount}) => {
+const ExpenseItem = ({title , date , amount, category}) => {
 
-	if(!title && !date && !amount) return null
+	if(!title && !date && !amount && !category) return null
 
 	return (
 		<>
@@ -12,6 +12,7 @@ const ExpenseItem = ({title , date , amount}) => {
 				<ExpenseDate date={date}/>
 				<div className="expense-item__description">
 					<h2>{title}</h2>
+					<p>{category}</p>
 					<div className="expense-item__price">{amount}</div>
 				</div>
 			</div>

@@ -7,10 +7,10 @@ const NewExpense = ({ getExpenses }) => {
 	const [enteredAmount, setEnteredAmount] = useState(0)
 	const [enteredDate, setEnteredDate] = useState('')
 	const [isEditing, setIsEditing] = useState(false)
+	const [select, setSelect] = useState('')
 
 	let year = enteredDate.split('-')
-	console.log(enteredDate,year)
-	
+	console.log(enteredDate, year)
 
 	const titleHandler = e => {
 		setEnteredTitle(e.target.value)
@@ -29,14 +29,16 @@ const NewExpense = ({ getExpenses }) => {
 		setEnteredDate(e.target.value)
 	}
 
-
 	const submitHandler = async e => {
 		e.preventDefault()
 		await supabase.from('Expenses').insert({
 			Title: enteredTitle,
 			Date: enteredDate,
 			ExpensesAmount: +enteredAmount,
-			filteredYear: year[0].toString()
+			filteredYear: year[0].toString(),
+			Kategoria: select,
+
+
 		})
 
 		// const expenseDate = {
@@ -50,6 +52,7 @@ const NewExpense = ({ getExpenses }) => {
 		setEnteredAmount('')
 		setEnteredDate('')
 		setEnteredTitle('')
+		setSelect('')
 		// props.onAddExpense(expenseDate)
 		setIsEditing(false)
 		getExpenses()
@@ -60,6 +63,11 @@ const NewExpense = ({ getExpenses }) => {
 	const stopEditingHandler = () => {
 		setIsEditing(false)
 	}
+	const selectedHandler =(e)=>{
+		setSelect(e.target.value)
+
+	}
+	console.log(select)
 
 	return (
 		<div className="new-expense">
@@ -82,6 +90,17 @@ const NewExpense = ({ getExpenses }) => {
 						<div className="new-expense__control">
 							<label>Date</label>
 							<input type="date" min="2023-01-01" max="2026-01-01" onChange={dateHandler} value={enteredDate} />
+						</div>
+					</div>
+					<div className="new-expense__controls">
+						<div className="new-expense__control">
+							<label>Category</label>
+							<select onChange={selectedHandler} value={select}>
+								<option value=""></option>
+								<option value="Food">Food</option>
+								<option value="Grocery shopping">Grocery shopping</option>
+								<option value="Car">Car</option>
+							</select>
 						</div>
 					</div>
 					<div className="new-expene__actions">
