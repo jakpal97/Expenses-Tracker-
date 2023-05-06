@@ -1,5 +1,5 @@
 import React from 'react'
-import './ExpenseItem.css'
+import './ExpenseItem.scss'
 import ExpenseDate from './ExpenseDate'
 
 const ExpenseItem = ({title , date , amount}) => {

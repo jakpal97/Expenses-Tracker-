@@ -1,5 +1,5 @@
 import React from 'react'
-import './ChartBars.css'
+import './ChartBars.scss'
 const ChartBars = props => {
 let barHeight = '0%'
 

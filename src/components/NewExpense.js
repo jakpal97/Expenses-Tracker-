@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import './NewExpense.css'
+import './NewExpense.scss'
 import supabase from '../supabase'
 
 const NewExpense = ({ getExpenses }) => {
