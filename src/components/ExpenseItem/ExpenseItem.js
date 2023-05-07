@@ -1,7 +1,7 @@
 import React from 'react'
 import './ExpenseItem.scss'
-import ExpenseDate from './ExpenseDate'
-import supabase from '../supabase'
+import ExpenseDate from '../ExpenseDate/ExpenseDate'
+import supabase from '../../supabase'
 import { faTrash } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 

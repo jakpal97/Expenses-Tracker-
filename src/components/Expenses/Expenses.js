@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import './expenses.scss'
-import ExpenseItem from './ExpenseItem'
-import ExpensesFilter from './ExpenseFilter'
-import ExpensesChart from './ExpensesChart'
+import ExpenseItem from '../ExpenseItem/ExpenseItem'
+import ExpensesFilter from '../ExpenseFilter/ExpenseFilter'
+import ExpensesChart from '../ExpensesChart'
 
 const Expenses = ({ expensesStored, setExpensesStored, getExpenses }) => {
 	const [filteredYear, setFilteredYear] = useState('2023')

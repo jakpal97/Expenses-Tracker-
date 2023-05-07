@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import './App.scss'
-import Expenses from './components/Expenses'
-import NewExpense from './components/NewExpense'
+import Expenses from './components/Expenses/Expenses'
+import NewExpense from './components/NewExpense/NewExpense'
 import supabase from './supabase'
 
 const INITIAL_EXPENSES = []

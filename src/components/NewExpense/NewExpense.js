@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './NewExpense.scss'
-import supabase from '../supabase'
+import supabase from '../../supabase'
 
 const NewExpense = ({ getExpenses }) => {
 	const [enteredTitle, setEnteredTitle] = useState('')
