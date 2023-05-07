@@ -3,7 +3,6 @@ import './App.scss'
 import Expenses from './components/Expenses'
 import NewExpense from './components/NewExpense'
 import supabase from './supabase'
-import DonutChart from "react-donut-chart";
 
 const INITIAL_EXPENSES = []
 const App = () => {
@@ -28,8 +27,7 @@ const App = () => {
 	return (
 		<>
 			<NewExpense onAddExpense={addExpenseHandler} getExpenses={getExpenses} />
-			<Expenses expenses={expenses} expensesStored={expensesStored} />
-			
+			<Expenses expenses={expenses} expensesStored={expensesStored} setExpensesStored={setExpensesStored} getExpenses={getExpenses} />
 		</>
 	)
 }

@@ -37,23 +37,15 @@ const NewExpense = ({ getExpenses }) => {
 			ExpensesAmount: +enteredAmount,
 			filteredYear: year[0].toString(),
 			Kategoria: select,
-
-
 		})
 
-		// const expenseDate = {
-
-		// 	id: Math.random().toString(),
-		// 	title: enteredTitle,
-		// 	amount: +enteredAmount,
-		// 	date: new Date(enteredDate),
-		// }
+		
 
 		setEnteredAmount('')
 		setEnteredDate('')
 		setEnteredTitle('')
 		setSelect('')
-		// props.onAddExpense(expenseDate)
+		
 		setIsEditing(false)
 		getExpenses()
 	}
@@ -63,9 +55,8 @@ const NewExpense = ({ getExpenses }) => {
 	const stopEditingHandler = () => {
 		setIsEditing(false)
 	}
-	const selectedHandler =(e)=>{
+	const selectedHandler = e => {
 		setSelect(e.target.value)
-
 	}
 	console.log(select)
 

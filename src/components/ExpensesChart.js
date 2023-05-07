@@ -1,7 +1,10 @@
-import { React } from 'react'
+import { React, useState } from 'react'
 import Chart from './Chart/Chart'
 
 const ExpensesChart = ({ expenses }) => {
+	const [showTooltip, setShowTooltip] = useState(false)
+	const [tooltipValue, setTooltipValue] = useState(0)
+
 	const chartDataPoints = [
 		{
 			label: '01',
@@ -53,10 +56,7 @@ const ExpensesChart = ({ expenses }) => {
 			value: 0,
 		},
 	]
-	// for(const expense of props.expenses){
-	//     const expensMonth = expense.date.getMonth()
-	//     chartDataPoints[expensMonth].value += expense.amount
-	// }
+
 	for (let item of expenses) {
 		const calendar = item.Date.split('-')
 		const mounth = calendar[1].toString()
@@ -65,7 +65,11 @@ const ExpensesChart = ({ expenses }) => {
 		console.log(getMounth)
 	}
 
-	return <Chart dataPoints={chartDataPoints} />
+	return (
+		<div>
+			<Chart dataPoints={chartDataPoints} />
+		</div>
+	)
 }
 
 export default ExpensesChart

@@ -66,9 +66,15 @@
 			width: 20rem;
 			max-width: 100%;
 
-			 & option {
-				font: inherit
-			 }
+			& option {
+				font: inherit;
+			}
+			& i {
+				height: 20px;
+				width: 20px;
+
+				background-color: #ccc;
+			}
 		}
 	}
 
