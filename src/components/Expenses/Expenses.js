@@ -41,6 +41,7 @@ const Expenses = ({ expensesStored, setExpensesStored, getExpenses }) => {
 					setExpensesStored={setExpensesStored}
 					getExpenses={getExpenses}
 					id={expense.id}
+					expensesStored={expensesStored}
 				/>
 			)
 		})

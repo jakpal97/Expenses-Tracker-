@@ -10,6 +10,7 @@ const App = () => {
 	const [expensesStored, setExpensesStored] = useState()
 
 	async function getExpenses() {
+		
 		const { data } = await supabase.from('Expenses').select()
 		setExpensesStored(data)
 	}
@@ -27,7 +28,12 @@ const App = () => {
 	return (
 		<>
 			<NewExpense onAddExpense={addExpenseHandler} getExpenses={getExpenses} />
-			<Expenses expenses={expenses} expensesStored={expensesStored} setExpensesStored={setExpensesStored} getExpenses={getExpenses} />
+			<Expenses
+				expenses={expenses}
+				expensesStored={expensesStored}
+				setExpensesStored={setExpensesStored}
+				getExpenses={getExpenses}
+			/>
 		</>
 	)
 }
