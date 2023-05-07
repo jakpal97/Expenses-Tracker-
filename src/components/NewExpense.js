@@ -91,6 +91,7 @@ const NewExpense = ({ getExpenses }) => {
 								<option value="Food">Food</option>
 								<option value="Grocery shopping">Grocery shopping</option>
 								<option value="Car">Car</option>
+								<option value='Home'>Home</option>
 							</select>
 						</div>
 					</div>

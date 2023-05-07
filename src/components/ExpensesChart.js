@@ -2,8 +2,7 @@ import { React, useState } from 'react'
 import Chart from './Chart/Chart'
 
 const ExpensesChart = ({ expenses }) => {
-	const [showTooltip, setShowTooltip] = useState(false)
-	const [tooltipValue, setTooltipValue] = useState(0)
+	
 
 	const chartDataPoints = [
 		{
