@@ -61,7 +61,7 @@ const ExpensesChart = ({ expenses }) => {
 		const mounth = calendar[1].toString()
 		const getMounth = chartDataPoints.find(el => el.label == mounth)
 		getMounth.value += item.ExpensesAmount
-		console.log(getMounth)
+		
 	}
 
 	return (

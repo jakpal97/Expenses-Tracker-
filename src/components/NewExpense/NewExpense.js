@@ -21,11 +21,11 @@ const NewExpense = ({ getExpenses }) => {
 	const amountHandler = e => {
 		const inputAmount = e.target.value
 
-		if (isNaN(inputAmount)) {
-			alert('Amount must be a number.')
-		} else {
-			setEnteredAmount(inputAmount)
-		}
+		// if (isNaN(inputAmount)) {
+		// 	alert('Amount must be a number.')
+		// } else {
+		setEnteredAmount(inputAmount)
+		// }
 	}
 	const dateHandler = e => {
 		setEnteredDate(e.target.value)
@@ -47,11 +47,12 @@ const NewExpense = ({ getExpenses }) => {
 				text: 'Please enter title !!',
 			})
 			return
-		} else if (enteredAmount === '') {
+		} else if (enteredAmount === '' || enteredAmount < 0) {
 			setError({
 				titile: 'Invalid Amout',
-				text: 'Please enter amount !!!',
+				text: 'Please enter the right amount(Must be > 0) !!!',
 			})
+			setEnteredAmount('')
 			return
 		} else if (enteredDate === '') {
 			setError({
@@ -106,7 +107,7 @@ const NewExpense = ({ getExpenses }) => {
 						<div className="new-expense__controls">
 							<div className="new-expense__control">
 								<label>Amount</label>
-								<input type="number" min="0.01" step="0.01" value={enteredAmount} onChange={amountHandler} />
+								<input type="number" step="0.01" value={enteredAmount} onChange={amountHandler} />
 							</div>
 						</div>
 						<div className="new-expense__controls">
