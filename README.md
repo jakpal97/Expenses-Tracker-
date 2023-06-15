@@ -1,70 +1,47 @@
-# Getting Started with Create React App
+# Expenses Trackerr
+To jest README dla aplikacji do śledzenia wydatków. Aplikacja umożliwia dodawanie, przeglądanie, filtrowanie i usuwanie wydatków, a także generuje wykresy, które prezentują podsumowanie wydatków w danym miesiącu. Aplikacja korzysta z bazy danych Supabase do przechowywania danych.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Funkcje
+Aplikacja do śledzenia wydatków oferuje następujące funkcje:
 
-In the project directory, you can run:
++ Dodawanie nowych wydatków na podstawie kategorii, daty, kwoty i nazwy.
++ Przechowywanie danych o wydatkach w bazie danych Supabase.
++ Wyświetlanie listy dodanych wydatków wraz z informacjami o kategorii, dacie, kwocie i nazwie.
++ Generowanie wykresów, które prezentują podsumowanie wydatków w danym miesiącu.
++ Filtrowanie wydatków na podstawie daty i kategorii.
++ Usuwanie wydatków z listy.
++ Live Demo
 
-### `npm start`
+## Możesz zobaczyć aplikację w działaniu pod adresem https://jakpal97-github-945lm2pco-jakpal97.vercel.app/.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Technologie
+Aplikacja została zbudowana przy użyciu następujących technologii:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
++ HTML
++ Sass (SCSS)
++ React
++ Supabase (baza danych)
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Instrukcje instalacji
+Aby uruchomić aplikację lokalnie, wykonaj następujące kroki:
 
-### `npm run build`
+Sklonuj repozytorium na swój lokalny komputer.
+Przejdź do folderu z projektem.
+Uruchom terminal i zainstaluj wymagane zależności, wykonując polecenie:
++ npm install
+Po zakończeniu instalacji, uruchom aplikację, wpisując:
++ npm start
+Aplikacja powinna być dostępna pod adresem http://localhost:3000.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Instrukcje użytkowania
+Po uruchomieniu aplikacji będziesz mógł/mogła:
++ Dodawać nowe wydatki, wypełniając formularz i klikając przycisk "Dodaj wydatek".
++ Przeglądać listę dodanych wydatków, która zawiera informacje o kategorii, dacie, kwocie i nazwie.
++ Filtrować wydatki na podstawie daty i kategorii, używając odpowiednich opcji filtrów.
++ Usuwać wydatki z listy, klikając przycisk "Usuń" obok wybranego wydatku.
++ Konfiguracja bazy danych Supabase
++ Aplikacja korzysta z bazy danych Supabase do przechowywania danych o wydatkach. Aby skonfigurować połączenie z bazą danych, wykonaj następujące kroki:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
