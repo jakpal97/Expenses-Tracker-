@@ -1,47 +1,46 @@
-# Expenses Trackerr
-To jest README dla aplikacji do śledzenia wydatków. Aplikacja umożliwia dodawanie, przeglądanie, filtrowanie i usuwanie wydatków, a także generuje wykresy, które prezentują podsumowanie wydatków w danym miesiącu. Aplikacja korzysta z bazy danych Supabase do przechowywania danych.
+#Expenses Tracker
+This is the README for an expense tracking application. The application allows users to add, view, filter, and delete expenses. It also generates charts to present a summary of expenses in a given month. The application utilizes the Supabase database to store data.
 
+##Features
+The expense tracking application offers the following features:
 
-## Funkcje
-Aplikacja do śledzenia wydatków oferuje następujące funkcje:
++Adding new expenses based on category, date, amount, and name.
++Storing expense data in the Supabase database.
++Displaying a list of added expenses along with category, date, amount, and name information.
++Generating charts that provide a summary of expenses in a specific month.
++Filtering expenses based on date and category.
++Deleting expenses from the list.
++Live Demo
+##You can see the application in action at https://jakpal97-github-945lm2pco-jakpal97.vercel.app/.
 
-+ Dodawanie nowych wydatków na podstawie kategorii, daty, kwoty i nazwy.
-+ Przechowywanie danych o wydatkach w bazie danych Supabase.
-+ Wyświetlanie listy dodanych wydatków wraz z informacjami o kategorii, dacie, kwocie i nazwie.
-+ Generowanie wykresów, które prezentują podsumowanie wydatków w danym miesiącu.
-+ Filtrowanie wydatków na podstawie daty i kategorii.
-+ Usuwanie wydatków z listy.
-+ Live Demo
+##Technologies
+The application was built using the following technologies:
 
-## Możesz zobaczyć aplikację w działaniu pod adresem https://jakpal97-github-945lm2pco-jakpal97.vercel.app/.
++HTML
++Sass (SCSS)
++React
++Supabase (database)
 
-## Technologie
-Aplikacja została zbudowana przy użyciu następujących technologii:
+##Installation Instructions
+To run the application locally, follow these steps:
 
-+ HTML
-+ Sass (SCSS)
-+ React
-+ Supabase (baza danych)
+Clone the repository to your local computer.
+Navigate to the project folder.
+Open your terminal and install the required dependencies by running:
+Copy code
++npm install
+Once the installation is complete, start the application by running:
++npm start
+The application should be accessible at http://localhost:3000.
 
+##User Instructions
+After launching the application, you will be able to:
 
-## Instrukcje instalacji
-Aby uruchomić aplikację lokalnie, wykonaj następujące kroki:
-
-Sklonuj repozytorium na swój lokalny komputer.
-Przejdź do folderu z projektem.
-Uruchom terminal i zainstaluj wymagane zależności, wykonując polecenie:
-+ npm install
-Po zakończeniu instalacji, uruchom aplikację, wpisując:
-+ npm start
-Aplikacja powinna być dostępna pod adresem http://localhost:3000.
-
-## Instrukcje użytkowania
-Po uruchomieniu aplikacji będziesz mógł/mogła:
-+ Dodawać nowe wydatki, wypełniając formularz i klikając przycisk "Dodaj wydatek".
-+ Przeglądać listę dodanych wydatków, która zawiera informacje o kategorii, dacie, kwocie i nazwie.
-+ Filtrować wydatki na podstawie daty i kategorii, używając odpowiednich opcji filtrów.
-+ Usuwać wydatki z listy, klikając przycisk "Usuń" obok wybranego wydatku.
-+ Konfiguracja bazy danych Supabase
-+ Aplikacja korzysta z bazy danych Supabase do przechowywania danych o wydatkach. Aby skonfigurować połączenie z bazą danych, wykonaj następujące kroki:
++Add new expenses by filling out the form and clicking the "Add Expense" button.
++View the list of added expenses, including category, date, amount, and name information.
++Filter expenses based on date and category using the appropriate filter options.
++Delete expenses from the list by clicking the "Delete" button next to the selected expense.
++Supabase Database Configuration
++The application uses the Supabase database to store expense data. To configure the database connection, follow these steps:
 
 
